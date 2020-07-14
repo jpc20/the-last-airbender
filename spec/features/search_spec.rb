@@ -30,6 +30,7 @@ describe 'Search index'do
     visit root_path
     page.select 'Air Nomads'
     click_on 'Search For Members'
+    expect(page).to have_content('Total Number of people in the Air Nomads: 15')
 
     within '.members' do
       expect(page).to have_css('.member', count: 15)
