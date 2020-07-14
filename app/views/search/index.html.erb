@@ -1,9 +1,11 @@
-<h1>
-<%= @nation.split('_').map(&:capitalize).join(' ') %>
-</h1>
-<h2>
-  Total Number of people in the <%= @nation.split('_').map(&:capitalize).join(' ') %>: <%= @members.count %>
-</h2>
+<div class="navbar ">
+  <h1 class="navbar-brand">
+    <%= @nation.split('_').map(&:capitalize).join(' ') %>
+  </h1>
+  <h2 class="subtitle">
+    Total Number of people in the <%= @nation.split('_').map(&:capitalize).join(' ') %>: <%= @members.count %>
+  </h2>
+</div>
 
 <section class="members">
   <% @members.each do |member| %>
