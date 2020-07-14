@@ -13,11 +13,14 @@ describe 'Search index'do
     visit root_path
     page.select 'Fire Nation'
     click_on 'Search For Members'
+
     within '.members' do
       expect(page).to have_css('.member', count: 20)
       within(first('.member')) do
-        expect(page.to have_content('Name: Afiko'))
-        expect(page.to have_content('Affiliation: Fire Nation'))
+        expect(page).to have_content('Name: Afiko')
+        expect(page).to have_content('Affiliation: Fire Nation')
+        expect(page).to have_content('Allies: Fire Nation')
+        expect(page).to have_content('Enemies: Aang')
       end
     end
   end

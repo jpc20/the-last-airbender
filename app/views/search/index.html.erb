@@ -4,3 +4,15 @@
 <h2>
   Total Number of people in the <%= @nation.split('_').map(&:capitalize).join(' ') %>: <%= @members.count %>
 </h2>
+
+<section class="members">
+  <% @members.each do |member| %>
+    <ul class="member">
+      <%= member.photo_url %><br>
+      <li>Name: <%= member.name %></li>
+      <li>Affiliation: <%= member.affiliation%></li>
+      <li>Allies: <%= member.allies.join(', ') %></li>
+      <li>Enemies: <%= member.enemies.join(', ') %></li>
+    </ul>
+  <% end %>
+</section>
