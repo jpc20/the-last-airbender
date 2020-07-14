@@ -24,5 +24,20 @@ describe 'Search index'do
         expect(page).to have_content('Enemies: Aang')
       end
     end
+
+    visit root_path
+    page.select 'Air Nomads'
+    click_on 'Search For Members'
+
+    within '.members' do
+      expect(page).to have_css('.member', count: 15)
+      within(first('.member')) do
+        expect(page).to have_xpath("img[@src='https://vignette.wikia.nocookie.net/avatar/images/a/ae/Aang_at_Jasmine_Dragon.png/revision/latest?cb=20130612174003']")
+        expect(page).to have_content('Name: Aang')
+        expect(page).to have_content('Affiliation: Air Acolytes Air Nomads Air Scouts (formerly) Team Avatar')
+        expect(page).to have_content('Allies: Appa')
+        expect(page).to have_content('Enemies: Azula')
+      end
+    end
   end
 end
