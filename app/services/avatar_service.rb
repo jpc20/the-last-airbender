@@ -1,6 +1,7 @@
 class AvatarService
   def members_by_nation(nation)
-    JSON.parse(conn.get("characters?affiliation=#{nation.gsub(/_/, '+')}").body, symbolize_names: true)
+    response = conn.get("characters?affiliation=#{nation.gsub(/_/, '+')}")
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   private

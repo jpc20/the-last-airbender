@@ -9,7 +9,7 @@ describe 'Search index'do
     expect(page).to have_content('Total Number of people in the Fire Nation: 20')
   end
 
-  it "shows all members information" do
+  it "shows all Fire Nation information" do
     visit root_path
     page.select 'Fire Nation'
     click_on 'Search For Members'
@@ -24,7 +24,9 @@ describe 'Search index'do
         expect(page).to have_content('Enemies: Aang')
       end
     end
+  end
 
+  it "shows all Air Nomad information" do
     visit root_path
     page.select 'Air Nomads'
     click_on 'Search For Members'
@@ -40,4 +42,5 @@ describe 'Search index'do
       end
     end
   end
+
 end
