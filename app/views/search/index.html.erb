@@ -1,0 +1,6 @@
+<h1>
+<%= @nation.split('_').map(&:capitalize).join(' ') %>
+</h1>
+<h2>
+  Total Number of people in the <%= @nation.split('_').map(&:capitalize).join(' ') %>: <%= @members.count %>
+</h2>
