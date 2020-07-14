@@ -7,7 +7,7 @@
 
 <section class="members">
   <% @members.each do |member| %>
-    <ul class="member">
+    <ul class="member", id="member">
       <%= image_tag(member.photo_url) if member.photo_url %><br>
       <li>Name: <%= member.name %></li>
       <li>Affiliation: <%= member.affiliation%></li>

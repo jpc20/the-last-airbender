@@ -112,3 +112,10 @@
 .select-field option {
 	font-weight:normal;
 }
+
+#member{
+	display:inline-block;
+	height:100px;
+  margin-left:10px;
+	width:300px;
+}
