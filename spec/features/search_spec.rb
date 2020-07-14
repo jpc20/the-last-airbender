@@ -17,6 +17,7 @@ describe 'Search index'do
     within '.members' do
       expect(page).to have_css('.member', count: 20)
       within(first('.member')) do
+        expect(page).to have_xpath("img[@src='https://vignette.wikia.nocookie.net/avatar/images/2/24/Afiko.png/revision/latest?cb=20121121024128']")
         expect(page).to have_content('Name: Afiko')
         expect(page).to have_content('Affiliation: Fire Nation')
         expect(page).to have_content('Allies: Fire Nation')
